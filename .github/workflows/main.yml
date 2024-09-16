@@ -26,7 +26,7 @@ jobs:
           
       - name: sync
         env:
-          dest: "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/PBP/Pertemuan-02"
+          dest: "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/PBP/${{ github.event.repository.name }}"
         run: |
           echo "${{secrets.DEPLOY_KEY}}" > ~/deploy_key
           chmod 600 ~/deploy_key
